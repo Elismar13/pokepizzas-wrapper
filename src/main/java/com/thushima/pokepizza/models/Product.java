@@ -7,6 +7,10 @@ public class Product {
     private String type;
     private float price;
 
+    public Product() {
+        
+    }
+
     public Product(int id, String name, String description, String type, float price) {
         setId(id);
         setName(name);
