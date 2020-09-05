@@ -1,4 +1,4 @@
-package com.thushima.pokepizza.models;
+package com.thushima.pokepizza.api.models;
 
 public class Product {
     private int id;
