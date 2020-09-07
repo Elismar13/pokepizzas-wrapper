@@ -1,21 +1,36 @@
 package com.thushima.pokepizza.api.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+@Entity
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull
     private int id;
+
+    @NotBlank
     private String name;
+
+    @NotBlank
     private String description;
-    private String type;
+
+    @NotNull
     private float price;
 
     public Product() {
         
     }
 
-    public Product(int id, String name, String description, String type, float price) {
+    public Product(int id, String name, String description, float price) {
         setId(id);
         setName(name);
         setDescription(description);
-        setType(type);
         setPrice(price);
     }
 
@@ -41,14 +56,6 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public float getPrice() {
