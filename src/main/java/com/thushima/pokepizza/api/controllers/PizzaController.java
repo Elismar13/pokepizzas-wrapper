@@ -20,8 +20,13 @@ public class PizzaController {
 		return pizzaRepository.save(pizza);
 	}
 
-	@GetMapping
-	public List<Pizza> findAllByFlavor(@RequestParam String flavor) {
+	@GetMapping("/all")
+	public List<Pizza> getAllPizzas() {
+		return pizzaRepository.findAll();
+	}
+
+	@GetMapping()
+	public List<Pizza> findAllByFlavor(@RequestParam(required = false) String flavor) {
 		return pizzaRepository.findAllByFlavor(flavor);
 	}
 }
