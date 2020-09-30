@@ -1,4 +1,4 @@
-package com.thushima.pokepizza.api.models;
+package com.thushima.pokepizza.domain.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

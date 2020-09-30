@@ -1,6 +1,4 @@
-package com.thushima.pokepizza.api.models;
-
-import org.springframework.validation.annotation.Validated;
+package com.thushima.pokepizza.domain.models;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
