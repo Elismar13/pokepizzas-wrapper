@@ -1,5 +1,6 @@
 package com.thushima.pokepizza.domain.service;
 
+import com.thushima.pokepizza.domain.exception.ProductException;
 import com.thushima.pokepizza.domain.models.Pizza;
 import com.thushima.pokepizza.domain.repository.PizzaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,13 +11,17 @@ public class PizzaCreationService {
     @Autowired
     private PizzaRepository pizzaRepository;
 
-    public Pizza create(Pizza pizza) throws Exception {
+    public Pizza create(Pizza pizza) {
         Pizza existPizza = pizzaRepository.findByName(pizza.getName());
 
         if(existPizza != null && !existPizza.equals(pizza)) {
-            throw new Exception("Pizza já existe!");
+            throw new ProductException("Pizza já existe!");
         }
 
         return pizzaRepository.save(pizza);
+    }
+
+    public void delete(Long pizzaId) {
+        pizzaRepository.deleteById(pizzaId);
     }
 }
