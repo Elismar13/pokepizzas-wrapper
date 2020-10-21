@@ -12,13 +12,11 @@ public class PizzaCreationService {
     private PizzaRepository pizzaRepository;
 
     public Pizza create(Pizza pizza) {
-        System.out.println("pizza = " + pizza.getName());
         Pizza existPizza = pizzaRepository.findByName(pizza.getName());
 
         if(existPizza != null && !existPizza.equals(pizza)) {
             throw new ProductException("Pizza já existe!");
         }
-        System.out.println("pizza = " + pizza);
 
         return pizzaRepository.save(pizza);
     }

@@ -13,7 +13,7 @@ public class Pizza extends Product {
 
     }
 
-    public Pizza(int id, String name, String description, float price, String flavor) {
+    public Pizza(Long id, String name, String description, float price, String flavor) {
         super(id, name, description, price);
         setFlavor(flavor);
     }
